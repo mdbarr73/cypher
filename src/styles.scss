@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import './app/shared/styles/fonts.scss';
+@import './app/shared/styles/colors.scss';
+@import './app/shared/styles/anim.scss';
+
+h1, h2, h3, h4, h5 {
+  font-family: $hero-font;
+  color: $darkGrey;
+}
+
+button {
+  border: none;
+  background-color: $purple;
+  color: white;
+  margin: .5rem;
+  padding: .5rem 1rem;
+  font-family: $stnd-font;
+  font-size: 18px;
+  min-height: 3rem;
+
+  &:focus {
+    outline: none;
+  }
+}
