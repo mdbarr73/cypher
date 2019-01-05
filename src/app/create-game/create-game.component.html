@@ -1,3 +1,31 @@
-<p>
-  create-game works!
-</p>
+<h2>Create Game</h2>
+<form>
+  <mat-form-field>
+    <input matInput placeholder="Game name" type="text" maxlength="20">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Password" type="text" maxlength="20">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Grid size</mat-label>
+    <mat-select value="5">
+      <mat-option *ngFor="let sz of gridSizes" [value]="sz">{{sz}}x{{sz}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Word list</mat-label>
+    <mat-select value="Standard">
+      <mat-option>Standard</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field [ngStyle]="{'color': '#255c99'}">
+    <input matInput placeholder="Blue Team Name" type="text" maxlength="20">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Red Team Name" type="text" maxlength="20">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Your username" type="text" maxlength="20">
+  </mat-form-field>
+  <button mat-raised-button color="accent" type="submit">Create Game</button>
+</form>

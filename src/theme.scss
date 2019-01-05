@@ -1,0 +1,107 @@
+@import './app/shared/styles/fonts.scss';
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$md-primary: (
+  50: #646B73,
+  100: #535B63,
+  200: #424B54,
+  300: #424B54,
+  400: #424B54,
+  500: #3C454D,
+  600: #3C454D,
+  700: #31373E,
+  800: #31373E,
+  900: #31373E,
+  A100: #121517,
+  A200: #121517,
+  A400: #121517,
+  A700: #121517,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$md-accent: (
+  50: #6C5D75,
+  100: #5C4B66,
+  200: #4C3957,
+  300: #4C3957,
+  400: #4C3957,
+  500: #4C3957,
+  600: #463450,
+  700: #463450,
+  800: #3F2F48,
+  900: #3F2F48,
+  A100: #3F2F48,
+  A200: #2A2030,
+  A400: #2A2030,
+  A700: #2A2030,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$md-cypher-primary: mat-palette($md-primary, 100, 50, 200);
+$md-cypher-accent: mat-palette($md-accent, 100, 50, 200);
+
+// The warn palette is optional (defaults to red).
+$md-cypher-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$md-cypher-theme: mat-light-theme($md-cypher-primary, $md-cypher-accent, $md-cypher-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($md-cypher-theme);
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Lato, sans-serif',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+@include mat-base-typography($custom-typography);
+@include mat-checkbox-typography($custom-typography);
+@include angular-material-typography($custom-typography);
+@include mat-core($custom-typography);

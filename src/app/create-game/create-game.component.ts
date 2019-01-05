@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateGameComponent implements OnInit {
 
+  public gridSizes: number[] = [4, 5, 6, 7, 8];
+
   constructor() { }
 
   ngOnInit() {
